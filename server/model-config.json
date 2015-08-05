@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "coffeeBookdb"
+  },
+  "AccessToken": {
+    "dataSource": "coffeeBookdb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "coffeeBookdb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "coffeeBookdb",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "coffeeBookdb",
+    "public": false
+  },
+  "coffee": {
+    "dataSource": "coffeeBookdb",
+    "public": true
+  }
+}

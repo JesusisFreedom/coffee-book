@@ -1,0 +1,110 @@
+$main-list-width: 800px;
+$main-list-padding: $base-gutter;
+$coffee-type-height: 50px;
+$coffee-icon-size: 2em;
+$action-icon-size: 1.5em;
+section.main-list {
+  position: absolute;
+  max-height: 100%;
+  top: 50px;
+  bottom: 0px;
+  width: 800px;
+  margin-left: $logo-dimensions+$header-padding;
+  padding: 0px $main-list-padding;
+  overflow-x: hidden;
+}
+
+.coffee {
+  height: 140px;
+  min-height: 140px;
+  border-radius: $base-radius;
+  border: 1px $muteblack solid;
+  padding: $base-gutter;
+  position: relative;
+  transition: all .5s ease;
+  &.coffee-expanded {
+    transition: all .5s ease;
+    min-height: 160px;
+    height: auto;
+    .coffee-info {
+      display: block;
+    }
+    .coffee-info-action {
+      color: $blue;
+    }
+  }
+  &.coffee-favorited {
+    .coffee-favorite {
+      color: $red;
+    }
+  }
+  .coffee-favorite {
+    float: right;
+    font-size: $action-icon-size;
+    color: $muteblack;
+    &:hover {
+      color: $red;
+    }
+  }
+  .coffee-info {
+    display: none;
+    margin-top: 25px;
+    padding-bottom: 50px;
+    .coffee-info-group {
+      margin: 15px 0px;
+    }
+    .coffee-regions {
+      float: right;
+      .coffee-regions-region-map {
+        img {
+          max-width: 80%;
+        }
+      }
+    }
+  }
+  .coffee-info-action {
+    float: right;
+    font-size: $action-icon-size;
+    color: $muteblack;
+    &:hover {
+      color: $blue;
+    }
+  }
+  .coffee-header {
+    line-height: $coffee-type-height;
+  }
+  .coffee-data-row {
+    position: absolute;
+    padding: 0px $base-gutter;
+    left: 0px;
+    width: 100%;
+    bottom: $base-gutter;
+    .coffee-score {
+      float: left;
+      .coffee-score-favorites {
+        font-size: 26px;
+      }
+    }
+  }
+  .coffee-type {
+
+    &.coffee-type-light {
+      color: $lightbrown;
+      float: left;
+      display: block;
+      width: $coffee-type-height;
+      height: $coffee-type-height;
+      margin-right: 15px;
+      border-radius: 100px;
+      text-align: center;
+      font-size: $coffee-icon-size;
+      border: 1px $muteblack solid;
+      .icon-beans {
+        &:before {
+          vertical-align: text-bottom;
+        }
+        line-height: 50px;
+      }
+    }
+  }
+}

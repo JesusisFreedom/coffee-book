@@ -1,0 +1,27 @@
+.login-form{
+  height: 100%;
+  display: table;
+  width: 50%;
+  margin: auto;
+
+  form.login-form-form{
+    padding: $base-gutter;
+    display: table-cell;
+    height: 300px;
+    width: 50%;
+    border: 1px $muteblack solid;
+    border-radius: $base-radius;
+    .login-form-header{
+      margin-bottom: $base-gutter*2;
+    }
+    .login-form-form-group{
+      float: right;
+      display: block;
+      font-size: 2em;
+      padding: 0px $base-gutter $base-gutter $base-gutter;
+      input{
+        font-size: 1.9rem;
+      }
+    }
+  }
+}

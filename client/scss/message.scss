@@ -1,0 +1,12 @@
+.alert{
+  min-width: 300px;
+  margin:5px auto;
+  background-color: $alert;
+  color: $alert-text;
+  border-radius: $base-radius;
+  padding: $base-gutter;
+  &.alert-warning{
+    background-color: $warning;
+    color: $warning-text;
+  }
+}

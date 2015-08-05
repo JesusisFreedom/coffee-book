@@ -1,0 +1,22 @@
+tip-link{
+  font-size: inherit;
+}
+.tip-link{
+  font-size: inherit;
+
+  .tip-link-icon{
+    font-size: inherit;
+    color: inherit;
+    transition:width .5s ease;
+
+  }
+  .tip-link-tip{
+    font-size: .9rem;
+    &.ng-hide{
+      width: 0px;
+    }
+    &.ng-show{
+      width: 10px;
+    }
+  }
+}

@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+q {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+[ng-click]{
+  cursor: pointer;
+}
+
+@mixin form-reset-general {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: auto;
+  vertical-align: middle; // IE6,IE7
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+%form-reset-general {
+  @include form-reset-general;
+}
+
+@mixin form-reset-special-box-sizing {
+  box-sizing: border-box;
+}
+
+%form-reset-special-box-sizing {
+  @include form-reset-special-box-sizing;
+}
+
+@mixin form-reset-input-specific {
+  &:focus {
+    outline: 0;
+  }
+
+  &[type=checkbox],
+  &[type=radio] {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* Make webkit render the search input like a normal text field */
+  &[type=search] {
+    appearance: textfield;
+    box-sizing: content-box;
+  }
+
+  /* Fix IE7 display bug */
+  &[type="reset"],
+  &[type="button"],
+  &[type="submit"] {
+    overflow: visible;
+  }
+}
+
+@mixin form-reset-input {
+  @include form-reset-general;
+  @include form-reset-input-specific;
+
+  /* These elements are usually rendered a certain way by the browser */
+  &[type=reset],
+  &[type=button],
+  &[type=submit],
+  &[type=checkbox],
+  &[type=radio] {
+    @include form-reset-special-box-sizing;
+  }
+}
+
+%form-reset-input {
+  @extend %form-reset-general;
+  @include form-reset-input-specific;
+
+  /* These elements are usually rendered a certain way by the browser */
+  &[type=reset],
+  &[type=button],
+  &[type=submit],
+  &[type=checkbox],
+  &[type=radio] {
+    @extend %form-reset-special-box-sizing;
+  }
+}
+
+@mixin form-reset-label {
+  @include form-reset-general;
+}
+
+%form-reset-label {
+  @extend %form-reset-general;
+}
+
+@mixin form-reset-select-specific {
+  /* Move the label to the top */
+  &[multiple] {
+    vertical-align: top;
+  }
+}
+
+@mixin form-reset-select {
+  @include form-reset-general;
+  @include form-reset-special-box-sizing;
+  @include form-reset-select-specific;
+}
+
+%form-reset-select {
+  @extend %form-reset-general;
+  @extend %form-reset-special-box-sizing;
+  @include form-reset-select-specific;
+}
+
+@mixin form-reset-button-specific {
+  background: none;
+  border: 0;
+  outline: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+}
+
+@mixin form-reset-button {
+  @include form-reset-general;
+  @include form-reset-button-specific;
+}
+
+%form-reset-button {
+  @extend %form-reset-general;
+  @include form-reset-button-specific;
+}
+
+@mixin form-reset-textarea-specific {
+  /* Move the label to the top */
+  vertical-align: top;
+
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+}
+
+@mixin form-reset-textarea {
+  @include form-reset-general;
+  @include form-reset-textarea-specific;
+}
+
+%form-reset-textarea {
+  @extend %form-reset-general;
+  @include form-reset-textarea-specific;
+}
+
+%inputStyle{
+  border: 1px $muteblack solid;
+  border-radius: $base-radius;
+  background-color: $white;
+  padding: 5px 0px 5px 3px;
+  transition: all .5s ease;
+  &:focus{
+    background-color: darken($white, 5%);
+    border-color: $input-active;
+
+  }
+}
+
+input[type]{
+  @extend %form-reset-input;
+  @extend %inputStyle;
+}
+
+label {
+  @extend %form-reset-label;
+}
+
+select {
+  @extend %form-reset-select;
+}
+
+button {
+  @extend %form-reset-button;
+  &:hover{
+    cursor: pointer;
+  }
+  border: 1px $blue solid;
+  border-radius: $base-radius;
+  padding: 5px 10px;
+  background-color: $blue;
+  color: $white;
+
+}
+
+textarea {
+  @extend %form-reset-textarea;
+}
+
+.right{
+  float: right;
+}
+
+

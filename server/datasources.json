@@ -1,0 +1,6 @@
+{
+  "coffeeBookdb": {
+    "name": "coffeeBookdb",
+    "connector": "mongodb"
+  }
+}

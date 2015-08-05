@@ -1,0 +1,38 @@
+body{
+  height: 100%;
+}
+
+$border-radius: 10px;
+$base-gutter: 15px;
+$base-radius: 3px;
+
+$black: #000;
+$white: #fff;
+$muteblack: rgba($black, 0.3);
+$red: red;
+$blue: #3D8EB9;
+$lightbrown: #8b572a;
+$medbrown: darken($lightbrown, 10%);
+$lightblack: lighten($medbrown, 10%);
+$input-active: $blue;
+
+$warning: #F37934;
+$warning-text: $white;
+$error: #D14841;
+$error-text: $white;
+$success: #00A885;
+$success-text: $white;
+$alert: #75706B;
+$alert-text: $white;
+
+
+@import "reset";
+@import "icons";
+@import "header";
+@import "main-list";
+@import "type";
+
+@import "tip-link";
+@import "login-form";
+
+@import "message";

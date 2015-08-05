@@ -1,0 +1,52 @@
+{
+  "name": "coffee",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "type": [
+        "string"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "flavor": {
+      "type": "string"
+    },
+    "roaster": {
+      "type": "object",
+      "required": true
+    },
+    "regions": {
+      "type": "object"
+    },
+    "score": {
+      "type": "object"
+    },
+    "ownerId": {
+      "type": {
+        "required": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "owner": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "",
+      "required": true
+    }
+  },
+  "acls": [],
+  "methods": []
+}

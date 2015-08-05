@@ -1,0 +1,18 @@
+<div class="login-form">
+  <form class="login-form-form" name="ctrl.loginForm" ng-submit="ctrl.submit()">
+    <h4 class="login-form-header">Login</h4>
+    <label class="login-form-form-group">
+      Email:
+      <span class="icon-at"></span>
+      <input name="email" type="text" ng-model="ctrl.email" required>
+    </label>
+    <label class="login-form-form-group">
+      Password
+      <span class="icon-asterisk"></span>
+      <input name="password" type="password" ng-model="ctrl.password" required>
+    </label>
+    <label class="login-form-form-group">
+      <button type="submit" class="login-form-form-submit">Login</button>
+    </label>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+$logo-dimensions: 155px;
+$header-padding: $base-gutter;
+header.website-header {
+  padding: $header-padding;
+  position: relative;
+  .logo {
+    height: $logo-dimensions;
+    width: $logo-dimensions;
+  }
+  .website-header-notifications {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    clear: both;
+  }
+}

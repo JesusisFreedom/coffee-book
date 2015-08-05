@@ -1,0 +1,7 @@
+{
+  "directory": "client/lib",
+  "analytics": false,
+  "scripts": {
+    "postinstall": "gulp wiredep"
+  }
+}

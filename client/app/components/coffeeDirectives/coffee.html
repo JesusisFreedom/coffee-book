@@ -1,0 +1,37 @@
+<div class="coffee" ng-class="{'coffee-expanded': expanded}" ng-class="{'coffee-favorited': coffee.favorited}">
+  <div class="coffee-favorite">
+    <tip-link icon="heart" tip="Love it"></tip-link>
+  </div>
+  <div class="coffee-header">
+    <span class="coffee-type coffee-type-{{coffee.type}}">
+      <span class="icon-beans"></span>
+    </span>
+    <h4>{{coffee.name}}</h4>
+  </div>
+  <div class="coffee-info">
+    <div class="coffee-regions">
+      <div class="coffee-regions-region-map" ng-repeat="region in coffee.regions">
+        <img ng-src="http://www.geonames.org/img/country/250/{{region.code}}.png">
+      </div>
+    </div>
+
+    <div class="coffee-roaster coffee-info-group">
+      <h6>Roaster</h6>
+      <p>Roast Type: {{coffee.type}}</p>
+      <!-- todo create url shortener service for tracking affiliate links -->
+      <p>Roaster Name: <a href="{{coffee.roaster.link}}">{{coffee.roaster.name}}<span class="icon-link" target="_blank"></span></a></p>
+    </div>
+    <div class="coffee-flavor coffee-info-group">
+      <h6>Flavor</h6>
+      <p>{{coffee.flavor}}</p>
+    </div>
+  </div>
+  <div class="coffee-data-row">
+    <div class="coffee-score">
+      <span class="coffee-score-favorites">{{coffee.score.favorites | number}}</span> people love this coffee
+    </div>
+    <div class="coffee-info-action">
+      <tip-link ng-click="toggleExpand()" icon="info" tip="Info"></tip-link>
+    </div>
+  </div>
+</div>
